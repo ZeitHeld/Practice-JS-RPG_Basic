@@ -14,12 +14,19 @@ class Combatant {
 		this.addAction("Attack").addAction("Defend");
 	}
 
-	performAction() {
-		
+	performAction(action, target) {
+		if (action.cost <= energy) {
+			//resolveAction(action, this, target)
+		}
+		else {
+			displayMessage("Can't perform action. Not enough Energy!");
+		}
 	}
 	
 	displayActions() { //part of main?
-		
+		action_list.forEach((action, id) => {
+			displayMessage(id+1 + ": " + action.name + " | Energy Cost: " + action.cost + " | Power: " + action.power + " | Accuracy: " + action.accuracy + " | Description: \"" + action.description + "\"");
+		}
 	}
 	
 	removeAction(action) {
@@ -27,7 +34,8 @@ class Combatant {
 	}
 	
 	addAction(action) {
-		
+		displayMessage("Added \"" + action.getName() + "\" to " + this.name + "'s action list.")
+		action_list.push(action);
 	}
 	
 
@@ -42,5 +50,6 @@ class Action() {
 		this.power = pow;
 		this.accuracy = acc;
 		this.cost = cost;
+		this.description = desc;
 	}
 }

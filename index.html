@@ -12,11 +12,65 @@
 			<h1>Welcome
 		</div>
 		
-		<div id="con_log_combat"></div>
-		<div id="con_msg_action"></div>
+		<div id="con_log_combat">
+			<h2>Combat Log
+		</div>
+		<div id="con_msg_action">
+			<h2>Last Action Message
+		</div>
 		
+		<h2>Combatants
+		<h3>Players
 		<div id="discon_player" class="con_combatant"></div>
+		<h3>Enemies
 		<div id="discon_enemy" class="con_combatant"></div>
+		
+		<h1>Make new Combatant
+		<div id="con_creation">
+		<p>	inputname
+			maxhp num
+			maxen num
+			attack num
+			defense number
+			
+			add action button
+			(name ,cost, power, acc, desc, effect(WIP))
+			
+			
+			<form action="/server/store_combatant.php">
+				<div>
+					<label for="name">Combatant Name:</label><br>
+					<input type="text" id="name" name="name" value="New Combatant">
+				</div>
+				<div>
+					<label for="hpmax">Max Health:</label><br>
+					<input type="text" id="hpmax" name="hpmax" value="10">
+				</div>
+				<div>
+					<label for="enmax">Max Energy:</label><br>
+					<input type="text" id="enmax" name="enmax" value="10">
+				</div>
+				<div>
+					<label for="atk">Attack:</label><br>
+					<input type="text" id="atk" name="atk" value="5">
+				</div>
+				<div>
+					<label for="def">Defense:</label><br>
+					<input type="text" id="def" name="def" value="5">
+				</div>
+				<div>
+					<input type="radio" id="team_player" name="team" value="Player">
+					<label for="team_player">Player</label><br>
+					<input type="radio" id="team_enemy" name="team" value="Enemy">
+					<label for="team_enemy">Enemy</label><br>
+				</div>
+				<div>
+				<br>
+				<input type="submit" value="Add New Combatant">
+			</form> 
+			
+			
+		</div>
 	
 	</body>
 </html>
